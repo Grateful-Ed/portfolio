@@ -111,6 +111,49 @@ nav.links a {
 }
 nav.links a:hover { text-decoration: underline; }
 
+/* ---------- topic blocks: the opening index ---------- */
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+.block {
+  display: block;
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--margin);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  padding: 14px 18px 13px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.block:hover { border-color: var(--rule); }
+.block:hover .block-title { text-decoration: underline; }
+.block-tag {
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 4px;
+}
+.block-title {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.block-line {
+  display: block;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
 /* ---------- notebook entries ---------- */
 .entry {
   background: var(--paper-panel);
@@ -234,4 +277,7 @@ details.more p { margin-top: 10px; color: var(--ink-2); }
   .entry, .colophon { padding: 17px 16px 15px; }
   .entry h2, .colophon h2 { font-size: 21px; }
   .photos { grid-template-columns: 1fr; gap: 13px; }
+  .blocks { grid-template-columns: 1fr; gap: 11px; }
+  .block { padding: 12px 15px 11px; }
+  .block-title { font-size: 18.5px; }
 }
