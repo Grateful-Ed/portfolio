@@ -1,0 +1,237 @@
+/* Portfolio — a kept notebook.
+   Paper with ruled lines and a red margin in the light;
+   a night notebook (dark slate paper, soft rules, light ink) after dark.
+   Static CSS only; no frameworks, no webfonts. */
+
+:root {
+  --paper: #f8f4e8;
+  --paper-panel: #fdfaf1;
+  --ink: #232a33;
+  --ink-2: #4c5866;
+  --ink-3: #75808d;
+  --rule: #b9c9d8;
+  --rule-soft: #d5dfe9;
+  --margin: #d98a80;
+  --accent: #20508c;
+  --accent-soft: #e7edf5;
+  --photo-line: #c8bfa8;
+  --shadow: 0 1px 2px rgba(35, 42, 51, .10), 0 6px 18px rgba(35, 42, 51, .07);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #171d27;
+    --paper-panel: #1e2634;
+    --ink: #e7ebf0;
+    --ink-2: #b7c1cd;
+    --ink-3: #8b97a6;
+    --rule: #33465e;
+    --rule-soft: #2a3a4e;
+    --margin: #a05a50;
+    --accent: #7db3e8;
+    --accent-soft: #22344c;
+    --photo-line: #3d4c63;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 6px 18px rgba(0, 0, 0, .3);
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  /* the notebook paper: faint ruled lines across the whole desk */
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    var(--rule-soft) 31px,
+    var(--rule-soft) 32px
+  );
+}
+
+/* the sheet itself, with its red margin line down the left */
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 28px 56px 64px;
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    transparent 0,
+    transparent 44px,
+    var(--margin) 44px,
+    var(--margin) 45.5px,
+    transparent 45.5px,
+    transparent 48px,
+    var(--margin) 48px,
+    var(--margin) 49px,
+    transparent 49px
+  );
+}
+
+/* ---------- masthead ---------- */
+.masthead { margin-bottom: 34px; }
+.kicker {
+  font-size: 12.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 10px;
+}
+h1 {
+  font-size: 40px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin: 0 0 10px;
+}
+.headline {
+  font-size: 19px;
+  font-style: italic;
+  color: var(--ink-2);
+  margin: 0 0 16px;
+  max-width: 34em;
+}
+nav.links { display: flex; gap: 10px; flex-wrap: wrap; }
+nav.links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid var(--rule);
+  background: var(--paper-panel);
+  border-radius: 3px;
+  padding: 5px 13px;
+  box-shadow: var(--shadow);
+}
+nav.links a:hover { text-decoration: underline; }
+
+/* ---------- notebook entries ---------- */
+.entry {
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--margin);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  padding: 22px 26px 20px;
+  margin-bottom: 26px;
+}
+.entry h2, .colophon h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--rule);
+}
+.entry-no {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 5px;
+}
+.entry p { margin: 0 0 13px; }
+.entry p:last-child { margin-bottom: 2px; }
+
+/* ---------- photos, taped into the notebook ---------- */
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 18px 0 6px;
+}
+figure { margin: 0; }
+.photos figure, .photo-wide {
+  background: var(--paper);
+  border: 1px solid var(--photo-line);
+  padding: 7px 7px 9px;
+  box-shadow: var(--shadow);
+}
+.photo-wide { margin: 18px 0 14px; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+figcaption {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--ink-2);
+  line-height: 1.45;
+  padding: 7px 3px 1px;
+}
+
+/* ---------- collapsible extra notes ---------- */
+details.more {
+  border-top: 1px dashed var(--rule);
+  margin-top: 16px;
+  padding-top: 11px;
+}
+details.more summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 15.5px;
+}
+details.more p { margin-top: 10px; color: var(--ink-2); }
+
+/* ---------- entry links ---------- */
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 16px !important;
+  padding-top: 13px;
+  border-top: 1px dashed var(--rule);
+}
+.entry-links a {
+  color: var(--accent);
+  font-size: 15.5px;
+  text-decoration: none;
+}
+.entry-links a:hover { text-decoration: underline; }
+
+/* ---------- footer ---------- */
+.colophon {
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--margin);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  padding: 22px 26px 20px;
+}
+.colophon p { margin: 0 0 10px; }
+.colophon a { color: var(--accent); }
+.colophon .fineprint {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--ink-3);
+  margin-bottom: 0;
+}
+
+/* ---------- phone: its own composition, not a squeezed page ---------- */
+@media (max-width: 640px) {
+  body { font-size: 16.5px; }
+  .page { padding: 26px 16px 40px 34px; }
+  .page {
+    background-image: linear-gradient(
+      to right,
+      transparent 0,
+      transparent 21px,
+      var(--margin) 21px,
+      var(--margin) 22.5px,
+      transparent 22.5px
+    );
+  }
+  h1 { font-size: 31px; }
+  .headline { font-size: 17.5px; }
+  .entry, .colophon { padding: 17px 16px 15px; }
+  .entry h2, .colophon h2 { font-size: 21px; }
+  .photos { grid-template-columns: 1fr; gap: 13px; }
+}
