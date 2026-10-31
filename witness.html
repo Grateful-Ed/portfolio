@@ -2,24 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="icon" href="data:," />
-    <title>Witness — E. William Harris IV</title>
-    <meta name="description" content="Portfolio of E. William Harris IV: a freight-forwarding and supply-chain professional building practical AI tools for the receiving dock and the dangerous-goods screening desk." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E. William Harris IV — Freight, AI tools, and the work</title>
+    <meta name="description" content="Portfolio of E. William Harris IV: freight forwarding and supply chain by trade; designer and director of AI tools for the receiving dock and the dangerous-goods screening desk." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="topbar">
-      <a class="wordmark" href="index.html">E. William Harris IV</a>
-      <nav class="tabs" aria-label="Sections">
+    <header class="topbar rv">
+      <span class="wordmark"><a href="index.html">E. William Harris IV</a></span>
+      <nav class="tabs" aria-label="Notebook sections">
         <a href="index.html">About</a>
         <a href="shipsafe.html">Ship Safe</a>
-        <a href="witness.html" class="active" aria-current="page">Witness</a>
-        <a href="tms.html">TMS Agent</a>
+        <a href="witness.html" aria-current="page">Witness</a>
+        <a href="tms.html">TMS Consolidation Agent</a>
         <a href="what-i-do.html">What I Do</a>
         <a href="experience.html">Experience</a>
         <a href="resume.pdf">Resume</a>
@@ -29,27 +27,29 @@
 
     <main>
       <section class="topic-head">
-        <h1>Witness</h1>
-        <p class="statement">Voice-first check-in for the receiving dock. Describe the pallet out loud; a photo scan cross-checks what you said, and disagreements become the exception report.</p>
+        <h1 class="rv">Witness</h1>
+        <p class="statement rv">A receiving-dock cross-check: the receiver&rsquo;s spoken read of a pallet, checked against the camera&rsquo;s look at the same pallet. The disagreements are the evidence.</p>
+        <p class="hero-links rv"><a class="btn" href="https://github.com/Grateful-Ed/witness">Witness on GitHub</a></p>
       </section>
       <section class="topic-body">
-        <p>Witness is my entry in the Meta Global AI Developer Hackathon, built during the October 26 &ndash; November 4, 2026 build window. It starts from a simple dock truth: the person receiving a delivery is hands-busy and often gloved, so Witness lets them check a pallet in by voice. Hold to talk, describe what you see, and the app transcribes it and flags anything that sounds like it belongs in a report &mdash; in the speaker&rsquo;s own words, not squeezed into fixed fields.</p>
-        <p>Then comes the cross-check. A photo scan of the same pallet, taken from all four sides, is compared against the spoken scan. Where the two agree, the check-in is trusted; where they disagree, the disagreement becomes a one-tap OS&amp;D exception report &mdash; overage, shortage, and damage &mdash; for a human to decide. The machine never signs off. A person does.</p>
-        <figure class="photo">
-          <img src="images/witness-test-load.webp" alt="Generated test load: a container cube shown from four sides" />
-          <figcaption>A generated test load &mdash; a container cube shown from all four sides. Witness&rsquo;s test data is staged and generated, and is disclosed as such wherever it appears.</figcaption>
+        <p class="rv">Most damage, shortage, and compliance claims are born at the receiving dock, in the gap between what the paperwork says arrived and what physically showed up. Witness closes that gap by taking two independent scans of the same pallet: the receiver walks it and says what they see out loud &mdash; count, wrap, condition, packaging, stackability, and the judgments that come with the job, like separating incompatible dangerous goods or sending a pallet for repack &mdash; and the camera takes the same pallet in from every side. Where the two scans agree, the record is settled. Where they disagree, that disagreement is the finding: the OS&amp;D evidence, captured at handoff instead of reconstructed weeks later.</p>
+
+        <figure class="photo rv">
+          <img class="drift" src="images/witness-test-load.webp" alt="Generated test load: a container cube shown from four sides" loading="lazy" />
+          <figcaption>A generated test load, seen from all four sides. A photo scan only counts when every side is in.</figcaption>
         </figure>
-        <p class="topic-links">
-          <a class="btn" href="https://grateful-ed.github.io/witness/">Open the live app</a>
-          <a class="plain-link" href="https://github.com/Grateful-Ed/witness">Source on GitHub</a>
-        </p>
+
+        <p class="rv">The bill of lading is already in the building before the truck arrives, so nobody recites reference numbers at the dock. Identity comes from a scan; voice carries only what the receiver&rsquo;s eyes and hands know. Findings notify the planner; the system never emails anyone outside on its own authority. Built for the Cerebral Valley × Meta hackathon, November 2026.</p>
+
+
       </section>
+      <p class="nextline rv">Next in the notebook: <a href="tms.html">TMS Consolidation Agent</a> &rarr;</p>
     </main>
 
-    <footer class="close">
-      <p class="close-name">E. William Harris IV</p>
-      <p class="close-line">Atlanta, Georgia &middot; <a href="mailto:E.William.Harris96@gmail.com">E.William.Harris96@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/edward-harris-w96">LinkedIn</a> &middot; <a href="https://github.com/Grateful-Ed">GitHub</a></p>
-      <p class="close-fine">Designed and directed by E. William Harris IV; built with AI assistance, stated openly.</p>
+    <footer>
+      <p class="close-name rv">E. William Harris IV</p>
+      <p class="close-line rv">Designed and directed by E. William Harris IV; built with AI assistance, stated openly. Not affiliated with or endorsed by any employer named here. Project names and marks belong to their owners.</p>
     </footer>
+    <script src="site.js"></script>
   </body>
 </html>
