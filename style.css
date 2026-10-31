@@ -72,6 +72,8 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.05; letter-spacing: -0.
 .manifest tbody tr { transition: background-color 0.25s ease; }
 .manifest tbody tr:hover { background: var(--field); }
 .manifest td:first-child { font-weight: 700; font-size: 19px; white-space: nowrap; width: 30%; }
+.manifest.record td:first-child { white-space: normal; width: 24%; }
+.manifest.record td:nth-child(3) { white-space: nowrap; }
 .manifest td:first-child a { color: var(--ink); text-decoration-color: var(--accent); }
 
 .about-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(28px, 4.5vw, 60px); align-items: start; }
