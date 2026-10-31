@@ -111,6 +111,48 @@ nav.links a {
 }
 nav.links a:hover { text-decoration: underline; }
 
+/* ---------- notebook divider tabs ---------- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 26px;
+  padding-bottom: 0;
+}
+.tabs a {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 15px;
+  color: var(--ink-2);
+  text-decoration: none;
+  background: var(--accent-soft);
+  border: 1px solid var(--rule-soft);
+  border-bottom: 3px solid var(--rule);
+  border-radius: 7px 7px 0 0;
+  padding: 7px 15px 6px;
+}
+.tabs a:hover { color: var(--ink); text-decoration: underline; }
+.tabs a.active {
+  background: var(--paper-panel);
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom: 3px solid var(--margin);
+  box-shadow: var(--shadow);
+}
+.masthead.compact { margin-bottom: 22px; }
+.masthead.compact h1 { font-size: 32px; }
+.fineprint-foot {
+  margin-top: 30px;
+  padding-top: 13px;
+  border-top: 1px dashed var(--rule);
+}
+.fineprint-foot p {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--ink-3);
+  margin: 0;
+}
+.fineprint-foot a { color: var(--accent); }
+
 /* ---------- topic blocks: the opening index ---------- */
 .blocks {
   display: grid;
@@ -277,6 +319,9 @@ details.more p { margin-top: 10px; color: var(--ink-2); }
   .entry, .colophon { padding: 17px 16px 15px; }
   .entry h2, .colophon h2 { font-size: 21px; }
   .photos { grid-template-columns: 1fr; gap: 13px; }
+  .tabs { flex-wrap: nowrap; overflow-x: auto; gap: 4px; padding-bottom: 4px; }
+  .tabs a { white-space: nowrap; font-size: 14px; padding: 6px 12px 5px; }
+  .masthead.compact h1 { font-size: 26px; }
   .blocks { grid-template-columns: 1fr; gap: 11px; }
   .block { padding: 12px 15px 11px; }
   .block-title { font-size: 18.5px; }
