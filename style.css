@@ -406,3 +406,16 @@ body { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; 
   .entry p, .colophon p { max-width: 78ch; }
   .photos { gap: 20px; }
 }
+
+/* ---------- work history blocks (Experience tab, Nov 2, 2026) ---------- */
+.job {
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid var(--rule-soft);
+}
+.job.first { border-top: none; margin-top: 2px; padding-top: 0; }
+.job h3 { font-size: 19.5px; line-height: 1.3; margin: 0 0 2px; }
+.job .role { font-style: italic; color: var(--ink-2); margin: 0 0 8px; }
+.entry ul { margin: 0 0 4px; padding-left: 21px; }
+.entry li { margin-bottom: 5px; }
+.entry li:last-child { margin-bottom: 0; }
