@@ -6,8 +6,9 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
     <title>E. William Harris IV — Portfolio</title>
-    <meta name="description" content="Portfolio of E. William Harris IV: a freight-forwarding and supply-chain professional building practical AI tools for the receiving dock and the dangerous-goods screening desk." />
+    <meta name="description" content="Portfolio of E. William Harris IV: a freight-forwarding and supply-chain professional building practical AI tools for the receiving dock, the dangerous-goods screening desk, and the desktop." />
     <link rel="stylesheet" href="style.css" />
+    <noscript><style>.panel[hidden] { display: block; } .tabs { display: none; }</style></noscript>
   </head>
   <body>
     <div class="page">
@@ -15,103 +16,180 @@
       <header class="masthead">
         <p class="kicker">A working notebook &middot; Atlanta, Georgia</p>
         <h1>E. William Harris IV</h1>
-        <p class="headline">Freight forwarding and supply chain, by trade &mdash; building practical AI tools for the warehouse floor, by hand.</p>
         <nav class="links" aria-label="Contact and profiles">
           <a href="https://www.linkedin.com/in/edward-harris-w96">LinkedIn</a>
-          <a href="mailto:E.William.Harris96@gmail.com">Email</a>
+          <a href="mailto:e.william.harris96@gmail.com">e.william.harris96@gmail.com</a>
           <a href="https://github.com/Grateful-Ed">GitHub</a>
         </nav>
       </header>
 
-      <section class="entry" aria-labelledby="about-h">
-        <h2 id="about-h"><span class="entry-no">Entry 1</span> About</h2>
-        <p>I come out of freight forwarding: I worked at Expeditors on the air export team, in an office attached to the warehouse &mdash; close enough to the freight to watch the manual processes grind, day after day. That is where my projects come from. I design and build AI tools for the two spots I know firsthand, the receiving dock and the dangerous-goods screening desk, and everything on this page is designed and directed by me and built with AI assistance, stated openly.</p>
-      </section>
+      <div class="tabs" role="tablist" aria-label="Portfolio sections">
+        <button type="button" class="tab" role="tab" data-tab="summary" aria-selected="true">Summary</button>
+        <button type="button" class="tab" role="tab" data-tab="ship-safe" aria-selected="false">Ship Safe</button>
+        <button type="button" class="tab" role="tab" data-tab="witness" aria-selected="false">Witness</button>
+        <button type="button" class="tab" role="tab" data-tab="tms" aria-selected="false">TMS Agent</button>
+        <button type="button" class="tab" role="tab" data-tab="clear-window" aria-selected="false">Clear Window</button>
+        <button type="button" class="tab" role="tab" data-tab="what-i-do" aria-selected="false">What I Do</button>
+        <button type="button" class="tab" role="tab" data-tab="experience" aria-selected="false">Experience</button>
+        <button type="button" class="tab" role="tab" data-tab="contact" aria-selected="false">Contact</button>
+      </div>
 
-      <section class="entry" aria-labelledby="shipsafe-h">
-        <h2 id="shipsafe-h"><span class="entry-no">Entry 2 &middot; the flagship</span> Ship Safe</h2>
-        <p>Ship Safe is a dangerous-goods screening aid for freight shipments. It screens individual shipment lines against dangerous-goods rules and hands the screener a clear determination on each line &mdash; what is clear, what needs a closer look, and what must not move &mdash; so a busy screener&rsquo;s time goes to the freight that actually needs it. Underneath the screens sits a written rules language, and the design is layered: a public rules core, with client-specific rules layered on as additions, never replacements. A shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output and no added context can soften.</p>
-        <p>The AI in Ship Safe is an adviser, never the authority. A screener can ask Muse Spark, reached through the Meta Model API, to brief them on an unfamiliar shipper or to take a second look at a single line &mdash; observations and questions only. The deterministic rule set makes every determination, and the human screener always makes the final call.</p>
-        <p>In validation, the suite ran 89 screening test cases: 141 of 141 regulated lines correctly flagged, 112 of 112 clean lines left clear, and 37 of 37 traps held. Personal project, built and validated on synthetic test data. Not affiliated with or endorsed by any employer.</p>
+      <main class="panels">
 
-        <div class="photos">
-          <figure>
-            <img src="images/shipsafe-screen.jpg" alt="Ship Safe screening desk: shipment lines with determinations" loading="lazy" />
-            <figcaption>The screening desk &mdash; every line gets a determination.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/shipsafe-line-details.jpg" alt="Ship Safe line details view for a single shipment line" loading="lazy" />
-            <figcaption>Line details &mdash; the workings behind one line&rsquo;s call.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/shipsafe-checklist.jpg" alt="Ship Safe checklist view" loading="lazy" />
-            <figcaption>The checklist &mdash; the screener&rsquo;s pass over a shipment.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/shipsafe-screen-output.jpg" alt="Ship Safe screening output, expanded" loading="lazy" />
-            <figcaption>Screening output, expanded &mdash; workings shown, not hidden.</figcaption>
-          </figure>
-        </div>
+        <section class="panel panel-summary" data-panel="summary" aria-label="Summary">
+          <p class="sum-headline">Supply Chain Management and Continuous Improvement, by trade &mdash; building practical AI tools for the warehouse floor, by hand.</p>
+          <p class="sum-about">I come out of freight forwarding: I worked at Expeditors on the air export team, in an office attached to the warehouse &mdash; close enough to the freight to watch the manual processes grind, day after day. That is where my projects come from. I design and direct AI tools for the spots I know firsthand &mdash; the receiving dock, the dangerous-goods screening desk, and now the desktop itself &mdash; and everything here is designed and directed by me and built with AI assistance, stated openly.</p>
+          <div class="cards">
+            <button type="button" class="card" data-goto="ship-safe">
+              <h3>Ship Safe</h3>
+              <p>A dangerous-goods screening aid for freight shipments &mdash; every line gets a determination, and the human screener stays the authority. The flagship.</p>
+              <span class="go">Open &rarr;</span>
+            </button>
+            <button type="button" class="card" data-goto="witness">
+              <h3>Witness</h3>
+              <p>Two witnesses for every load: a spoken scan and a photo scan, cross-checked &mdash; and the disagreement is the report. A Meta hackathon build.</p>
+              <span class="go">Open &rarr;</span>
+            </button>
+            <button type="button" class="card" data-goto="tms">
+              <h3>TMS Consolidation Agent</h3>
+              <p>Works a small freight world and produces a consolidation plan plus a priced struggle report. It proposes &mdash; a person decides.</p>
+              <span class="go">Open &rarr;</span>
+            </button>
+            <button type="button" class="card" data-goto="clear-window">
+              <h3>Clear Window</h3>
+              <p>Ask &ldquo;show me how&rdquo; and the answer gets drawn on your screen, telestrator-style. The AI holds the marker; it never clicks.</p>
+              <span class="go">Open &rarr;</span>
+            </button>
+          </div>
+          <p class="sum-foot">Atlanta, Georgia &mdash; open to logistics, supply-chain, and AI-implementation roles.</p>
+        </section>
 
-        <details class="more">
-          <summary>More notes &mdash; the design principles</summary>
-          <p>Layered rules: a public rules core, with client-specific rules layered on as additions, never replacements. Context adjusts, never silently: richer context may move a result into a different band, but the adjustment is always visible, never applied quietly. Stated hazards are hard blocks: a shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output can soften. And deterministic rules are the authority: AI assists with research; it does not make determinations.</p>
-        </details>
+        <section class="panel" data-panel="ship-safe" hidden>
+          <div class="entry">
+            <h2 id="shipsafe-h"><span class="entry-no">Entry 2 &middot; the flagship</span> Ship Safe</h2>
+            <p>Ship Safe is a dangerous-goods screening aid for freight shipments. It screens individual shipment lines against dangerous-goods rules and hands the screener a clear determination on each line &mdash; what is clear, what needs a closer look, and what must not move &mdash; so a busy screener&rsquo;s time goes to the freight that actually needs it. Underneath the screens sits a written rules language, and the design is layered: a public rules core, with client-specific rules layered on as additions, never replacements. A shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output and no added context can soften.</p>
+            <p>The AI in Ship Safe is an adviser, never the authority. A screener can ask Muse Spark, reached through the Meta Model API, to brief them on an unfamiliar shipper or to take a second look at a single line &mdash; observations and questions only. The deterministic rule set makes every determination, and the human screener always makes the final call.</p>
+            <p>In validation, the suite ran 89 screening test cases: 141 of 141 regulated lines correctly flagged, 112 of 112 clean lines left clear, and 37 of 37 traps held. Personal project, built and validated on synthetic test data. Not affiliated with or endorsed by any employer.</p>
 
-        <p class="entry-links">
-          <a href="https://ship-safe-project-journey.pages.dev/">Read the full story &mdash; The Journey So Far</a>
-          <a href="https://grateful-ed.github.io/ShipSafeDev/">Try the live demo</a>
-          <a href="https://github.com/Grateful-Ed/ShipSafeDev">Source on GitHub</a>
-        </p>
-      </section>
+            <div class="photos">
+              <figure>
+                <img src="images/shipsafe-screen.jpg" alt="Ship Safe screening desk: shipment lines with determinations" loading="lazy" />
+                <figcaption>The screening desk &mdash; every line gets a determination.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/shipsafe-line-details.jpg" alt="Ship Safe line details view for a single shipment line" loading="lazy" />
+                <figcaption>Line details &mdash; the workings behind one line&rsquo;s call.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/shipsafe-checklist.jpg" alt="Ship Safe checklist view" loading="lazy" />
+                <figcaption>The checklist &mdash; the screener&rsquo;s pass over a shipment.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/shipsafe-screen-output.jpg" alt="Ship Safe screening output, expanded" loading="lazy" />
+                <figcaption>Screening output, expanded &mdash; workings shown, not hidden.</figcaption>
+              </figure>
+            </div>
 
-      <section class="entry" aria-labelledby="witness-h">
-        <h2 id="witness-h"><span class="entry-no">Entry 3 &middot; in the workshop now</span> Witness</h2>
-        <p>Witness is my entry in the Meta Global AI Developer Hackathon, built during the October 26 &ndash; November 4, 2026 build window. It starts from a simple dock truth: the person receiving a delivery is hands-busy and often gloved, so Witness lets them check a pallet in by voice. Hold to talk, describe what you see, and the app transcribes it and flags anything that sounds like it belongs in a report &mdash; in the speaker&rsquo;s own words, not squeezed into fixed fields.</p>
-        <p>Then comes the cross-check. A photo scan of the same pallet, taken from all four sides, is compared against the spoken scan. Where the two agree, the check-in is trusted; where they disagree, the disagreement becomes a one-tap OS&amp;D exception report &mdash; overage, shortage, and damage &mdash; for a human to decide. The machine never signs off. A person does.</p>
+            <details class="more">
+              <summary>More notes &mdash; the design principles</summary>
+              <p>Layered rules: a public rules core, with client-specific rules layered on as additions, never replacements. Context adjusts, never silently: richer context may move a result into a different band, but the adjustment is always visible, never applied quietly. Stated hazards are hard blocks: a shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output can soften. And deterministic rules are the authority: AI assists with research; it does not make determinations.</p>
+            </details>
 
-        <figure class="photo-wide">
-          <img src="images/witness-test-load.webp" alt="Generated test load: a container cube shown from four sides" loading="lazy" />
-          <figcaption>A generated test load &mdash; a container cube shown from all four sides. Witness&rsquo;s test data is staged and generated, and is disclosed as such wherever it appears.</figcaption>
-        </figure>
+            <p class="entry-links">
+              <a href="https://ship-safe-project-journey.pages.dev/">Read the full story &mdash; The Journey So Far</a>
+              <a href="https://grateful-ed.github.io/ShipSafeDev/">Try the live demo</a>
+              <a href="https://github.com/Grateful-Ed/ShipSafeDev">Source on GitHub</a>
+            </p>
+          </div>
+        </section>
 
-        <p class="entry-links">
-          <a href="https://grateful-ed.github.io/witness/">Open the live app</a>
-          <a href="https://github.com/Grateful-Ed/witness">Source on GitHub</a>
-        </p>
-      </section>
+        <section class="panel" data-panel="witness" hidden>
+          <div class="entry">
+            <h2 id="witness-h"><span class="entry-no">Entry 3 &middot; in the workshop now</span> Witness</h2>
+            <p>Witness is my entry in the Meta Global AI Developer Hackathon, built during the October 26 &ndash; November 4, 2026 build window. It starts from a simple dock truth: the person receiving a delivery is hands-busy and often gloved, so Witness lets them check a pallet in by voice. Hold to talk, describe what you see, and the app transcribes it and flags anything that sounds like it belongs in a report &mdash; in the speaker&rsquo;s own words, not squeezed into fixed fields.</p>
+            <p>Then comes the cross-check. A photo scan of the same pallet, taken from all four sides, is compared against the spoken scan. Where the two agree, the check-in is trusted; where they disagree, the disagreement becomes a one-tap OS&amp;D exception report &mdash; overage, shortage, and damage &mdash; for a human to decide. The machine never signs off. A person does.</p>
 
-      <section class="entry" aria-labelledby="tms-h">
-        <h2 id="tms-h"><span class="entry-no">Entry 4</span> TMS Consolidation Agent</h2>
-        <p>Freight consolidation is a judgment call made under time pressure: which shipments ride together, on which lane, and what does the plan really cost when something does not fit? The TMS Consolidation Agent works a small sample world &mdash; a freight forwarder, an anchor retail client, eight shipments across three lanes &mdash; and produces two things: a consolidation plan, and a priced struggle report that shows what the plan costs at the points where it strains. Every number comes from a deterministic engine; the AI handles only the language around the numbers. And it proposes, never decides &mdash; no plan becomes official until a person says so.</p>
-        <p class="entry-links">
-          <a href="https://grateful-ed.github.io/tms-consolidation-agent/">Open the live demo</a>
-          <a href="https://github.com/Grateful-Ed/tms-consolidation-agent">Source on GitHub</a>
-        </p>
-      </section>
+            <figure class="photo-wide">
+              <img src="images/witness-test-load.webp" alt="Generated test load: a container cube shown from four sides" loading="lazy" />
+              <figcaption>A generated test load &mdash; a container cube shown from all four sides. Witness&rsquo;s test data is staged and generated, and is disclosed as such wherever it appears.</figcaption>
+            </figure>
 
-      <section class="entry" aria-labelledby="clearwindow-h">
-        <h2 id="clearwindow-h"><span class="entry-no">Entry 5 &middot; the newest build</span> Clear Window</h2>
-        <p>Clear Window is a desktop companion that answers &ldquo;show me how&rdquo; by showing. You ask how to do something on your computer, and instead of a list of steps &mdash; the kind that goes stale the moment a page changes &mdash; it draws on a transparent overlay that covers the whole screen: arrows, targets, drag paths, short notes, like the telestrator lines drawn over a sports replay. The window itself is clear. Only a thin rim admits it is there.</p>
-        <p>The founding rule is absolute: the AI never clicks and never types. Every input stays in the user&rsquo;s hands &mdash; the machine holds the marker, the person holds the mouse. The guide itself can be swapped from the app&rsquo;s menu: a fast built-in AI mode for ordinary questions, or a second mode where the guidance comes from my own AI agent over a private relay &mdash; slower, turn by turn, but it knows my work and my machine. Clear Window began as an idea dictated on a drive on the morning of November 2, 2026; by that afternoon it was a working Windows app, guiding its first real task on my own desktop.</p>
-      </section>
+            <p class="entry-links">
+              <a href="https://grateful-ed.github.io/witness/">Open the live app</a>
+              <a href="https://github.com/Grateful-Ed/witness">Source on GitHub</a>
+            </p>
+          </div>
+        </section>
 
-      <section class="entry" aria-labelledby="skills-h">
-        <h2 id="skills-h"><span class="entry-no">Entry 6</span> What I Do</h2>
-        <p>Freight forwarding is the home turf &mdash; air export, the paperwork, and the floor reality behind it. On top of that sits process improvement: watching a manual workflow until the bottleneck shows itself. And the newest entry in the notebook is AI implementation for logistics teams &mdash; taking a real operation, finding the step where an AI tool genuinely helps, and building it with the guardrails the work demands. I direct AI coding collaborators the way you would direct a build team: specifications first, tests before trust, and a human decision at every gate that matters.</p>
-      </section>
+        <section class="panel" data-panel="tms" hidden>
+          <div class="entry">
+            <h2 id="tms-h"><span class="entry-no">Entry 4</span> TMS Consolidation Agent</h2>
+            <p>Freight consolidation is a judgment call made under time pressure: which shipments ride together, on which lane, and what does the plan really cost when something does not fit? The TMS Consolidation Agent works a small sample world &mdash; a freight forwarder, an anchor retail client, eight shipments across three lanes &mdash; and produces two things: a consolidation plan, and a priced struggle report that shows what the plan costs at the points where it strains. Every number comes from a deterministic engine; the AI handles only the language around the numbers. And it proposes, never decides &mdash; no plan becomes official until a person says so.</p>
+            <p class="entry-links">
+              <a href="https://grateful-ed.github.io/tms-consolidation-agent/">Open the live demo</a>
+              <a href="https://github.com/Grateful-Ed/tms-consolidation-agent">Source on GitHub</a>
+            </p>
+          </div>
+        </section>
 
-      <section class="entry" aria-labelledby="exp-h">
-        <h2 id="exp-h"><span class="entry-no">Entry 7</span> Experience, in Brief</h2>
-        <p>Expeditors &mdash; freight forwarding, air export team. The work was moving air freight out of an office attached to the warehouse: bookings, documentation, and the daily exceptions that teach you how freight actually moves. Before and around the desk work, the through-line is the same: operations first, tools second. I am currently building full-time on the projects above and open to what comes next.</p>
-      </section>
+        <section class="panel" data-panel="clear-window" hidden>
+          <div class="entry">
+            <h2 id="clearwindow-h"><span class="entry-no">Entry 5 &middot; the newest build</span> Clear Window</h2>
+            <p>Clear Window is a desktop companion that answers &ldquo;show me how&rdquo; by showing. You ask how to do something on your computer, and instead of a list of steps &mdash; the kind that goes stale the moment a page changes &mdash; it draws on a transparent overlay that covers the whole screen: arrows, targets, drag paths, short notes, like the telestrator lines drawn over a sports replay. The window itself is clear. Only a thin rim admits it is there.</p>
+            <p>The founding rule is absolute: the AI never clicks and never types. Every input stays in the user&rsquo;s hands &mdash; the machine holds the marker, the person holds the mouse. The guide itself can be swapped from the app&rsquo;s menu: a fast built-in AI mode for ordinary questions, or a second mode where the guidance comes from my own AI agent over a private relay &mdash; slower, turn by turn, but it knows my work and my machine. Clear Window began as an idea dictated on a drive on the morning of November 2, 2026; by that afternoon it was a working Windows app, guiding its first real task on my own desktop.</p>
+          </div>
+        </section>
 
-      <footer class="colophon">
-        <h2><span class="entry-no">Last entry</span> Get in Touch</h2>
-        <p>The fastest way to reach me is email at <a href="mailto:E.William.Harris96@gmail.com">E.William.Harris96@gmail.com</a>, or through <a href="https://www.linkedin.com/in/edward-harris-w96">LinkedIn</a>. I am open to logistics, supply-chain, and AI-implementation roles.</p>
-        <p class="fineprint">This page is hand-kept, like the projects on it. Designed and directed by E. William Harris IV; built with AI assistance.</p>
-      </footer>
+        <section class="panel" data-panel="what-i-do" hidden>
+          <div class="entry">
+            <h2 id="skills-h"><span class="entry-no">Entry 6</span> What I Do</h2>
+            <p>Freight forwarding is the home turf &mdash; air export, the paperwork, and the floor reality behind it. On top of that sits process improvement: watching a manual workflow until the bottleneck shows itself. And the newest entry in the notebook is AI implementation for logistics teams &mdash; taking a real operation, finding the step where an AI tool genuinely helps, and building it with the guardrails the work demands. I direct AI coding collaborators the way you would direct a build team: specifications first, tests before trust, and a human decision at every gate that matters.</p>
+          </div>
+        </section>
 
+        <section class="panel" data-panel="experience" hidden>
+          <div class="entry">
+            <h2 id="exp-h"><span class="entry-no">Entry 7</span> Experience, in Brief</h2>
+            <p>Expeditors &mdash; freight forwarding, air export team. The work was moving air freight out of an office attached to the warehouse: bookings, documentation, and the daily exceptions that teach you how freight actually moves. Before and around the desk work, the through-line is the same: operations first, tools second. I am currently building full-time on the projects above and open to what comes next.</p>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="contact" hidden>
+          <footer class="colophon">
+            <h2><span class="entry-no">Last entry</span> Get in Touch</h2>
+            <p>The fastest way to reach me is email at <a href="mailto:E.William.Harris96@gmail.com">E.William.Harris96@gmail.com</a>, or through <a href="https://www.linkedin.com/in/edward-harris-w96">LinkedIn</a>. I am open to logistics, supply-chain, and AI-implementation roles.</p>
+            <p class="fineprint">This page is hand-kept, like the projects on it. Designed and directed by E. William Harris IV; built with AI assistance.</p>
+          </footer>
+        </section>
+
+      </main>
     </div>
+
+    <script>
+      (function () {
+        var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+        var panels = {};
+        Array.prototype.forEach.call(document.querySelectorAll('.panel'), function (p) {
+          panels[p.getAttribute('data-panel')] = p;
+        });
+        function activate(key, push) {
+          if (!panels[key]) key = 'summary';
+          tabs.forEach(function (t) {
+            var on = t.getAttribute('data-tab') === key;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+          });
+          Object.keys(panels).forEach(function (k) { panels[k].hidden = k !== key; });
+          if (push) history.replaceState(null, '', '#' + key);
+        }
+        tabs.forEach(function (t) {
+          t.addEventListener('click', function () { activate(t.getAttribute('data-tab'), true); });
+        });
+        Array.prototype.forEach.call(document.querySelectorAll('[data-goto]'), function (el) {
+          el.addEventListener('click', function () { activate(el.getAttribute('data-goto'), true); });
+        });
+        window.addEventListener('hashchange', function () { activate(location.hash.slice(1), false); });
+        activate(location.hash.slice(1) || 'summary', false);
+      })();
+    </script>
   </body>
 </html>
