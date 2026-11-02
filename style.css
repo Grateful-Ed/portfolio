@@ -419,3 +419,43 @@ body { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; 
 .entry ul { margin: 0 0 4px; padding-left: 21px; }
 .entry li { margin-bottom: 5px; }
 .entry li:last-child { margin-bottom: 0; }
+
+/* ---------- Clear Window photo + speech bubble (Nov 2, 2026) ---------- */
+.cw-photo { position: relative; }
+.bubble {
+  position: absolute;
+  top: 5.5%;
+  left: 33%;
+  max-width: 46%;
+  background: #fffdf4;
+  color: #232a33;
+  font-size: 16.5px;
+  font-style: italic;
+  line-height: 1.4;
+  border: 1.5px solid #c8bfa8;
+  border-radius: 16px;
+  padding: 11px 15px;
+  box-shadow: 0 3px 10px rgba(35, 42, 51, .25);
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 30px;
+  width: 16px;
+  height: 16px;
+  background: #fffdf4;
+  border-right: 1.5px solid #c8bfa8;
+  border-bottom: 1.5px solid #c8bfa8;
+  transform: rotate(45deg);
+}
+.credit {
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  color: var(--ink-3);
+  margin-top: 3px;
+}
+@media (max-width: 640px) {
+  .bubble { font-size: 13.5px; max-width: 58%; left: 29%; top: 4%; padding: 9px 12px; }
+}
