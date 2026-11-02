@@ -379,3 +379,30 @@ body { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; 
 @media (max-height: 700px) {
   .panel-summary { overflow-y: auto; }
 }
+
+/* ---------- the desktop composition (Nov 2, 2026) ----------
+   Same page, two compositions, chosen by the screen it opens on:
+   below 1100px the sheet keeps the stacked phone composition William
+   approved; at desktop widths the sheet widens and the summary splits —
+   headline across the top, the About in a reading column on the left,
+   the four project cards filling the right. Project entries get the
+   wider canvas too, with prose held to a readable line length. */
+@media (min-width: 1100px) {
+  .page { max-width: 1280px; padding-top: 32px; }
+  .masthead h1 { font-size: 46px; }
+
+  .panel-summary {
+    display: grid;
+    grid-template-columns: minmax(300px, 5fr) 7fr;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 44px;
+  }
+  .sum-headline { grid-column: 1 / -1; font-size: 23px; margin-bottom: 20px; }
+  .sum-about { grid-column: 1; font-size: 17.5px; margin: 0; align-self: start; }
+  .panel-summary .cards { grid-column: 2; }
+  .sum-foot { grid-column: 1 / -1; }
+
+  .panel .entry, .panel .colophon { padding: 28px 34px 24px; }
+  .entry p, .colophon p { max-width: 78ch; }
+  .photos { gap: 20px; }
+}
