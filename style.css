@@ -1,122 +1,381 @@
-/* E. William Harris IV — portfolio.
-   Set like freight paperwork: one grotesque, display-size headlines,
-   flat colour, a manifest table where a list would go. No cards. */
+/* Portfolio — a kept notebook.
+   Paper with ruled lines and a red margin in the light;
+   a night notebook (dark slate paper, soft rules, light ink) after dark.
+   Static CSS only; no frameworks, no webfonts. */
 
 :root {
-  --ground: #f5f5f2;
-  --field: #e8eae6;
-  --ink: #191b1f;
-  --accent: #0b4ea2;
-  --measure: 38em;
-  --gap: clamp(72px, 10vw, 120px);
+  --paper: #f8f4e8;
+  --paper-panel: #fdfaf1;
+  --ink: #232a33;
+  --ink-2: #4c5866;
+  --ink-3: #75808d;
+  --rule: #b9c9d8;
+  --rule-soft: #d5dfe9;
+  --margin: #d98a80;
+  --accent: #20508c;
+  --accent-soft: #e7edf5;
+  --photo-line: #c8bfa8;
+  --shadow: 0 1px 2px rgba(35, 42, 51, .10), 0 6px 18px rgba(35, 42, 51, .07);
 }
+
 @media (prefers-color-scheme: dark) {
-  :root { --ground: #101216; --field: #1a1d23; --ink: #f2f2ef; --accent: #7fb2e5; }
+  :root {
+    --paper: #171d27;
+    --paper-panel: #1e2634;
+    --ink: #e7ebf0;
+    --ink-2: #b7c1cd;
+    --ink-3: #8b97a6;
+    --rule: #33465e;
+    --rule-soft: #2a3a4e;
+    --margin: #a05a50;
+    --accent: #7db3e8;
+    --accent-soft: #22344c;
+    --photo-line: #3d4c63;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 6px 18px rgba(0, 0, 0, .3);
+  }
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+
 body {
-  margin: 0; background: var(--ground); color: var(--ink);
-  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px; line-height: 1.6;
-  padding: 28px clamp(20px, 6vw, 84px) 90px;
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  /* the notebook paper: faint ruled lines across the whole desk */
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    var(--rule-soft) 31px,
+    var(--rule-soft) 32px
+  );
 }
-::selection { background: var(--accent); color: var(--ground); }
 
-a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color 0.2s ease; }
-a:hover { text-decoration-thickness: 2px; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-
-.topbar {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px 34px;
-  padding-bottom: 20px; margin-bottom: var(--gap);
+/* the sheet itself, with its red margin line down the left */
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 28px 56px 64px;
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    transparent 0,
+    transparent 44px,
+    var(--margin) 44px,
+    var(--margin) 45.5px,
+    transparent 45.5px,
+    transparent 48px,
+    var(--margin) 48px,
+    var(--margin) 49px,
+    transparent 49px
+  );
 }
-.wordmark { font-weight: 800; font-size: 19px; letter-spacing: -0.01em; }
-.wordmark a { color: var(--ink); text-decoration: none; }
-.tabs { display: flex; gap: 4px 22px; flex-wrap: nowrap; overflow-x: auto; margin-left: auto; scrollbar-width: none; }
+
+/* ---------- masthead ---------- */
+.masthead { margin-bottom: 34px; }
+.kicker {
+  font-size: 12.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 10px;
+}
+h1 {
+  font-size: 40px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin: 0 0 10px;
+}
+.headline {
+  font-size: 19px;
+  font-style: italic;
+  color: var(--ink-2);
+  margin: 0 0 16px;
+  max-width: 34em;
+}
+nav.links { display: flex; gap: 12px; flex-wrap: wrap; }
+nav.links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.5px solid var(--rule);
+  background: var(--paper-panel);
+  border-radius: 4px;
+  padding: 9px 20px;
+  box-shadow: var(--shadow);
+}
+nav.links a:hover { text-decoration: underline; }
+
+/* ---------- notebook entries ---------- */
+.entry {
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--margin);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  padding: 22px 26px 20px;
+  margin-bottom: 26px;
+}
+.entry h2, .colophon h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--rule);
+}
+.entry-no {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 5px;
+}
+.entry p { margin: 0 0 13px; }
+.entry p:last-child { margin-bottom: 2px; }
+
+/* ---------- photos, taped into the notebook ---------- */
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 18px 0 6px;
+}
+figure { margin: 0; }
+.photos figure, .photo-wide {
+  background: var(--paper);
+  border: 1px solid var(--photo-line);
+  padding: 7px 7px 9px;
+  box-shadow: var(--shadow);
+}
+.photo-wide { margin: 18px 0 14px; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+figcaption {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--ink-2);
+  line-height: 1.45;
+  padding: 7px 3px 1px;
+}
+
+/* ---------- collapsible extra notes ---------- */
+details.more {
+  border-top: 1px dashed var(--rule);
+  margin-top: 16px;
+  padding-top: 11px;
+}
+details.more summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 15.5px;
+}
+details.more p { margin-top: 10px; color: var(--ink-2); }
+
+/* ---------- entry links ---------- */
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 16px !important;
+  padding-top: 13px;
+  border-top: 1px dashed var(--rule);
+}
+.entry-links a {
+  color: var(--accent);
+  font-size: 15.5px;
+  text-decoration: none;
+}
+.entry-links a:hover { text-decoration: underline; }
+
+/* ---------- footer ---------- */
+.colophon {
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--margin);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  padding: 22px 26px 20px;
+}
+.colophon p { margin: 0 0 10px; }
+.colophon a { color: var(--accent); }
+.colophon .fineprint {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--ink-3);
+  margin-bottom: 0;
+}
+
+/* ---------- phone: its own composition, not a squeezed page ---------- */
+@media (max-width: 640px) {
+  body { font-size: 16.5px; }
+  .page { padding: 26px 16px 40px 34px; }
+  .page {
+    background-image: linear-gradient(
+      to right,
+      transparent 0,
+      transparent 21px,
+      var(--margin) 21px,
+      var(--margin) 22.5px,
+      transparent 22.5px
+    );
+  }
+  h1 { font-size: 31px; }
+  .headline { font-size: 17.5px; }
+  .entry, .colophon { padding: 17px 16px 15px; }
+  .entry h2, .colophon h2 { font-size: 21px; }
+  .photos { grid-template-columns: 1fr; gap: 13px; }
+}
+
+/* ---------- the tabbed shell (Nov 2, 2026: one tab per project) ----------
+   The page itself never scrolls: the sheet fills the screen, the tab bar
+   sits under the masthead, and each panel manages its own length.
+   The Summary panel is built to fill its screen without scrolling;
+   longer entries scroll inside their own panel, like a notebook page
+   taller than the desk. */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
+.page {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 26px;
+  padding-bottom: 18px;
+}
+.masthead { margin-bottom: 16px; flex: none; }
+.masthead h1 { margin-bottom: 12px; }
+
+/* ---------- tabs across the top ---------- */
+.tabs {
+  flex: none;
+  display: flex;
+  gap: 3px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 2px solid var(--rule);
+}
 .tabs::-webkit-scrollbar { display: none; }
-.tabs a {
-  color: var(--ink); text-decoration: none; font-size: 16.5px; font-weight: 550;
-  padding: 6px 1px; white-space: nowrap; transition: color 0.25s ease;
-  border-bottom: 3px solid transparent;
+.tab {
+  font: inherit;
+  font-size: 15px;
+  white-space: nowrap;
+  background: transparent;
+  color: var(--ink-3);
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
+  padding: 9px 12px 10px;
+  cursor: pointer;
 }
-.tabs a:hover { color: var(--accent); }
-.tabs a[aria-current="page"] { font-weight: 800; color: var(--accent); border-bottom-color: var(--accent); }
-
-.hero h1, .topic-head h1 {
-  font-size: clamp(52px, 7.6vw, 108px); line-height: 0.98; letter-spacing: -0.03em;
-  font-weight: 800; margin: 0 0 26px; max-width: 10em;
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] {
+  background: var(--paper-panel);
+  color: var(--ink);
+  font-weight: 700;
+  border-color: var(--rule-soft);
+  box-shadow: inset 0 3px 0 var(--margin);
 }
-.statement { font-size: clamp(21px, 2.5vw, 27px); line-height: 1.42; font-weight: 550; max-width: 34em; margin: 0; }
-.hero-links { display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: center; margin-top: 40px; font-size: 17px; }
-.btn {
-  display: inline-block; background: var(--accent); color: var(--ground);
-  font-weight: 700; font-size: 17.5px; text-decoration: none; padding: 14px 26px;
-  transition: transform 0.15s ease, background-color 0.25s ease;
+
+/* ---------- panels ---------- */
+.panels { flex: 1; min-height: 0; margin-top: 18px; }
+.panel { height: 100%; overflow-y: auto; padding: 2px 6px 10px 2px; }
+.panel[hidden] { display: none; }
+.panel .entry, .panel .colophon { margin-bottom: 4px; }
+
+/* ---------- the Summary panel: fills the screen, never scrolls ---------- */
+.panel-summary {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.btn:active { transform: translateY(2px); }
-.hero-links a.plain { font-weight: 600; }
-
-section { margin-top: var(--gap); }
-h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.05; letter-spacing: -0.025em; font-weight: 800; margin: 0 0 22px; }
-.topic-body p, .about p { max-width: var(--measure); margin: 0 0 20px; overflow-wrap: break-word; }
-.topic-body p:last-child { margin-bottom: 0; }
-
-.manifest { width: 100%; border-collapse: collapse; font-size: 17.5px; }
-.manifest th {
-  text-align: left; font-size: 15px; font-weight: 700; letter-spacing: 0.02em;
-  padding: 0 18px 12px 0; color: var(--ink);
+.panel-summary[hidden] { display: none; }
+.sum-headline {
+  font-size: 21px;
+  font-style: italic;
+  color: var(--ink-2);
+  margin: 2px 0 14px;
+  max-width: 36em;
 }
-.manifest td { padding: 17px 18px 17px 0; vertical-align: top; }
-.manifest tbody tr { transition: background-color 0.25s ease; }
-.manifest tbody tr:hover { background: var(--field); }
-.manifest td:first-child { font-weight: 700; font-size: 19px; white-space: nowrap; width: 30%; }
-.manifest.record td:first-child { white-space: normal; width: 24%; }
-.manifest.record td:nth-child(3) { white-space: nowrap; }
-.manifest td:first-child a { color: var(--ink); text-decoration-color: var(--accent); }
-
-.about-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(28px, 4.5vw, 60px); align-items: start; }
-.about-grid .photo { margin: 6px 0 0; }
-
-.photo { margin: 56px 0; overflow: hidden; }
-.work-shots { margin-top: var(--gap); }
-.work-shots .photo { margin: 0 0 56px; }
-.work-shots .photo:last-child { margin-bottom: 0; }
-.photo img { display: block; width: 100%; height: auto; background: var(--field); }
-.photo figcaption { font-size: 15.5px; margin-top: 12px; max-width: 44em; }
-.photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px, 3vw, 40px); margin: 56px 0; }
-.photo-pair .photo { margin: 0; }
-.work-shots .photo-pair { margin: 0 0 56px; }
-img.drift { animation: drift 16s ease-in-out infinite alternate; }
-@keyframes drift { from { transform: scale(1); } to { transform: scale(1.05); } }
-
-.principles p { font-size: clamp(20px, 2.4vw, 25px); font-weight: 600; line-height: 1.45; max-width: 30em; }
-.topic-links { margin-top: 44px; font-size: 18px; font-weight: 600; }
-.nextline { font-size: 21px; font-weight: 650; margin-top: 90px; }
-
-footer { margin-top: calc(var(--gap) + 30px); }
-.close-name { font-size: clamp(40px, 5.6vw, 72px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin: 0 0 14px; }
-.close-line { font-size: 16.5px; margin: 0; max-width: 46em; }
-
-/* Motion layer: elements are fully visible by default. Only when site.js runs
-   (it adds .js to <html>) do .rv elements start hidden and reveal on entry. */
-html.js .rv { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease var(--d, 0ms), transform 0.7s ease var(--d, 0ms); }
-html.js .rv.in { opacity: 1; transform: none; }
-
-@media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .about-grid .photo { margin-top: 14px; }
+.sum-about { margin: 0 0 20px; max-width: 44em; }
+.cards {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-content: stretch;
 }
-@media (max-width: 720px) {
-  .topic-head h1 { font-size: 44px; }
-  .photo-pair { grid-template-columns: 1fr; }
-  .manifest td:first-child { white-space: normal; }
-  .tabs { margin-left: 0; }
+.card {
+  font: inherit;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  background: var(--paper-panel);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--margin);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  padding: 16px 18px 13px;
+  cursor: pointer;
+  color: var(--ink);
 }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  html.js .rv { opacity: 1; transform: none; transition: none; }
-  img.drift { animation: none; }
-  .btn, .tabs a, a, .manifest tbody tr { transition: none; }
+.card:hover { border-color: var(--rule); }
+.card h3 { font-size: 19px; margin: 0 0 6px; line-height: 1.25; }
+.card p { margin: 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.45; }
+.card .go {
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+}
+.sum-foot {
+  flex: none;
+  margin: 16px 0 0;
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+/* ---------- phone: the shell holds, the summary breathes smaller ---------- */
+@media (max-width: 640px) {
+  .page { padding-top: 18px; }
+  /* links in two rows on phone: LinkedIn + GitHub share a row,
+     the email address gets its own — all still big, nothing swiped away */
+  nav.links a { font-size: 16px; padding: 8px 15px; }
+  nav.links a[href^="mailto:"] { order: 3; }
+  .tab { font-size: 14.5px; padding: 8px 11px 9px; }
+  .panels { margin-top: 13px; }
+  .masthead { margin-bottom: 10px; }
+  .sum-headline { font-size: 18px; margin-bottom: 10px; }
+  .sum-about { margin-bottom: 13px; line-height: 1.58; }
+  /* project tiles on phone: title only, two by two — the whole tile
+     is the button, and the tab bar above names every project too —
+     so the whole summary still fits one screen with no scrolling */
+  .cards { grid-template-columns: 1fr 1fr; gap: 9px; }
+  .card { padding: 11px 14px 9px; justify-content: center; }
+  .card h3 { font-size: 16.5px; margin: 0; }
+  .card p { display: none; }
+  .card .go { display: none; }
+  .sum-foot { margin-top: 11px; font-size: 13.5px; }
+}
+/* very short screens: let the summary scroll inside its panel rather
+   than crush the type — the exception, not the design */
+@media (max-height: 700px) {
+  .panel-summary { overflow-y: auto; }
 }
