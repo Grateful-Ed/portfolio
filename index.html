@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
     <title>E. William Harris IV — Portfolio</title>
-    <meta name="description" content="Portfolio of E. William Harris IV: a freight-forwarding and supply-chain professional building practical AI tools for the receiving dock, the dangerous-goods screening desk, and the desktop." />
+    <meta name="description" content="Portfolio of E. William Harris IV: software implementation, Six Sigma, and continuous improvement — building practical AI tools for the receiving dock, the dangerous-goods screening desk, the warehouse floor, and the desktop." />
     <link rel="stylesheet" href="style.css" />
     <noscript><style>.panel[hidden] { display: block; } .tabs { display: none; }</style></noscript>
   </head>
@@ -38,7 +38,7 @@
 
         <section class="panel panel-summary" data-panel="summary" aria-label="Summary">
           <p class="sum-headline">Supply Chain Management and Continuous Improvement, by trade &mdash; building practical AI tools for the warehouse floor, by hand.</p>
-          <p class="sum-about">I come out of freight forwarding: I worked at Expeditors on the air export team, in an office attached to the warehouse &mdash; close enough to the freight to watch the manual processes grind, day after day. That is where my projects come from. I design and direct AI tools for the spots I know firsthand &mdash; the receiving dock, the dangerous-goods screening desk, and now the desktop itself &mdash; and everything here is designed and directed by me and built with AI assistance, stated openly.</p>
+          <p class="sum-about">My work is software implementation, Six Sigma, and continuous improvement &mdash; my trade, and honestly my passion: watch a process until the waste shows itself, then build the thing that removes it. These days the building is AI. I design and direct AI tools for the spots I know firsthand &mdash; the receiving dock, the dangerous-goods screening desk, the warehouse floor, and now the desktop itself &mdash; work I learned from inside the operation, close enough to the freight to watch the manual processes grind, day after day. That is where my projects come from. Everything here is designed and directed by me and built with AI assistance, stated openly.</p>
           <div class="cards">
             <button type="button" class="card" data-goto="ship-safe">
               <h3>Ship Safe</h3>
@@ -47,7 +47,7 @@
             </button>
             <button type="button" class="card" data-goto="witness">
               <h3>Witness</h3>
-              <p>Two witnesses for every load: a spoken scan and a photo scan, cross-checked &mdash; and the disagreement is the report. A Meta hackathon build.</p>
+              <p>A whole warehouse run by voice and vision &mdash; the worker talks, the WMS updates itself, and at receiving, two witnesses cross-check every load. A flagship, born at a hackathon.</p>
               <span class="go">Open &rarr;</span>
             </button>
             <button type="button" class="card" data-goto="tms">
@@ -97,6 +97,7 @@
 
             <p class="entry-links">
               <a href="https://ship-safe-project-journey.pages.dev/">Read the full story &mdash; The Journey So Far</a>
+              <a href="https://docs.google.com/document/d/1KoRTJ66r-851d7OytFY1ZTc7GBYzteW8SlzpFYt7qSs/edit">Read the code in its own words</a>
               <a href="https://grateful-ed.github.io/ShipSafeDev/">Try the live demo</a>
               <a href="https://github.com/Grateful-Ed/ShipSafeDev">Source on GitHub</a>
             </p>
@@ -106,18 +107,21 @@
         <section class="panel" data-panel="witness" hidden>
           <div class="entry">
             <h2 id="witness-h"><span class="entry-no">Entry 3 &middot; in the workshop now</span> Witness</h2>
-            <p>Witness is my entry in the Meta Global AI Developer Hackathon, built during the October 26 &ndash; November 4, 2026 build window. It starts from a simple dock truth: the person receiving a delivery is hands-busy and often gloved, so Witness lets them check a pallet in by voice. Hold to talk, describe what you see, and the app transcribes it and flags anything that sounds like it belongs in a report &mdash; in the speaker&rsquo;s own words, not squeezed into fixed fields.</p>
-            <p>Then comes the cross-check. A photo scan of the same pallet, taken from all four sides, is compared against the spoken scan. Where the two agree, the check-in is trusted; where they disagree, the disagreement becomes a one-tap OS&amp;D exception report &mdash; overage, shortage, and damage &mdash; for a human to decide. The machine never signs off. A person does.</p>
+            <p>Witness is a warehouse management system run by voice and vision &mdash; an AI assistant for the entire warehouse process, from dock appointment to load and ship. Warehouse work is hands-busy and eyes-busy, so the worker runs the building by talking: speak the work, and the WMS updates itself. No keyboards, no clipboards, no stopping to type.</p>
+            <p>It runs the whole building &mdash; dock doors, zones and bins, inbound and outbound &mdash; over three surfaces: the desk keeps the record, the phone captures, the glasses glance. A voice-driven work queue dispatches the shift, and a central agent prepares work before anyone asks: pre-staging what is needed, flagging what is about to jam. Managers see the warnings with their numbers showing &mdash; always a proposal, never a decision. And the system learns the building&rsquo;s own language: its ontology is dynamic, so when a worker uses a word it does not know, it asks &mdash; and remembers the answer.</p>
 
             <figure class="photo-wide">
               <img src="images/witness-test-load.webp" alt="Generated test load: a container cube shown from four sides" loading="lazy" />
               <figcaption>A generated test load &mdash; a container cube shown from all four sides. Witness&rsquo;s test data is staged and generated, and is disclosed as such wherever it appears.</figcaption>
             </figure>
 
-            <p>Since then it has grown a second half. The receiving check is now one module inside a whole-warehouse system: a desk console whose home screen is a live map of the building; a Witness page for every shipment, pallet, and bin, carrying its events, its full transcript, and an AI agent that answers from that item&rsquo;s own record; flags on the map wherever a human is needed; and task views sliced so the freight flows downhill. The growth is the layer, not the breadth &mdash; Witness is meant to make the warehouse system a company already runs easier to work with, not to replace it. The current build adds the layer&rsquo;s memory: a dynamic ontology &mdash; a rolling digest of the building, kept current as freight moves &mdash; designed around one central agent behind every pair of glasses, delegating to specialists, so every answer starts from what the building already knows and the whole building is, literally, on the same page.</p>
+            <p>At receiving, every shipment gets two independent witnesses. The receiver speaks their scan &mdash; hold to talk, describe what you see, in their own words, not squeezed into fixed fields &mdash; and a photo scan takes the same load from all four sides. Witness cross-checks the two point by point: agree, flag, or can&rsquo;t verify. Every disagreement becomes a finished OS&amp;D report &mdash; overage, shortage, and damage &mdash; captured at handoff instead of reconstructed weeks later. The machine never signs off. A person does.</p>
+            <p>Witness was my entry in the Meta Global AI Developer Hackathon, built and submitted inside the October 26 &ndash; November 4, 2026 build window. It did not end at the deadline: it is one of my two flagship projects, and the work continues &mdash; full-flow voice completion, multi-job kitchens, guided entry, and a desk-phone build are the road from here. We are going to make this thing special.</p>
 
             <p class="entry-links">
+              <a href="https://grateful-ed.github.io/witness/demos.html">See the demos</a>
               <a href="https://grateful-ed.github.io/witness/">Open the live app</a>
+              <a href="https://docs.google.com/document/d/1a7Bp7KVVG7s4IvoPwG3Qadqo0zR_4E-VAQ0i1p2rzc0/edit">Read the code in its own words</a>
               <a href="https://github.com/Grateful-Ed/witness">Source on GitHub</a>
             </p>
           </div>
@@ -129,6 +133,7 @@
             <p>Freight consolidation is a judgment call made under time pressure: which shipments ride together, on which lane, and what does the plan really cost when something does not fit? The TMS Consolidation Agent works a small sample world &mdash; a freight forwarder, an anchor retail client, eight shipments across three lanes &mdash; and produces two things: a consolidation plan, and a priced struggle report that shows what the plan costs at the points where it strains. Every number comes from a deterministic engine; the AI handles only the language around the numbers. And it proposes, never decides &mdash; no plan becomes official until a person says so.</p>
             <p class="entry-links">
               <a href="https://grateful-ed.github.io/tms-consolidation-agent/">Open the live demo</a>
+              <a href="https://docs.google.com/document/d/1Y4cyOhhm585VNXqDTXWied72C_sGicmnRE7rC7h6bS4/edit">Read the code in its own words</a>
               <a href="https://github.com/Grateful-Ed/tms-consolidation-agent">Source on GitHub</a>
             </p>
           </div>
@@ -151,7 +156,7 @@
         <section class="panel" data-panel="what-i-do" hidden>
           <div class="entry">
             <h2 id="skills-h"><span class="entry-no">Entry 6</span> What I Do</h2>
-            <p>Freight forwarding is the home turf &mdash; air export, the paperwork, and the floor reality behind it. On top of that sits process improvement: watching a manual workflow until the bottleneck shows itself. And the newest entry in the notebook is AI implementation for logistics teams &mdash; taking a real operation, finding the step where an AI tool genuinely helps, and building it with the guardrails the work demands. I direct AI coding collaborators the way you would direct a build team: specifications first, tests before trust, and a human decision at every gate that matters.</p>
+            <p>Software implementation is the home turf: taking a system into a real operation and making it stick. Underneath it sits Six Sigma and continuous improvement &mdash; watching a manual workflow until the bottleneck shows itself, then removing it. And the newest entry in the notebook is AI implementation for logistics teams &mdash; taking a real operation, finding the step where an AI tool genuinely helps, and building it with the guardrails the work demands. I direct AI coding collaborators the way you would direct a build team: specifications first, tests before trust, and a human decision at every gate that matters.</p>
           </div>
         </section>
 
