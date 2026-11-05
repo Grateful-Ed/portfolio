@@ -67,8 +67,8 @@
         <section class="panel" data-panel="ship-safe" hidden>
           <div class="entry">
             <h2 id="shipsafe-h"><span class="entry-no">Entry 2 &middot; the flagship</span> Ship Safe</h2>
-            <p>Ship Safe is a dangerous-goods screening aid for freight shipments. It screens individual shipment lines against dangerous-goods rules and hands the screener a clear determination on each line &mdash; what is clear, what needs a closer look, and what must not move &mdash; so a busy screener&rsquo;s time goes to the freight that actually needs it.</p>
-            <p><strong>Proprietary</strong> &mdash; Ship Safe&rsquo;s design and implementation details are intentionally not published. In the product, AI assistance is advisory only; the human screener makes the final call.</p>
+            <p>Ship Safe is a dangerous-goods screening aid for freight shipments. It screens individual shipment lines against dangerous-goods rules and hands the screener a clear determination on each line &mdash; what is clear, what needs a closer look, and what must not move &mdash; so a busy screener&rsquo;s time goes to the freight that actually needs it. Underneath the screens sits a written rules language, and the design is layered: a public rules core, with client-specific rules layered on as additions, never replacements. A shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output and no added context can soften.</p>
+            <p>The AI in Ship Safe is an adviser, never the authority. A screener can ask Muse Spark, reached through the Meta Model API, to brief them on an unfamiliar shipper or to take a second look at a single line &mdash; observations and questions only. The deterministic rule set makes every determination, and the human screener always makes the final call.</p>
             <p>In validation, the suite ran 89 screening test cases: 141 of 141 regulated lines correctly flagged, 112 of 112 clean lines left clear, and 37 of 37 traps held. Personal project, built and validated on synthetic test data. Not affiliated with or endorsed by any employer.</p>
 
             <div class="photos">
@@ -90,6 +90,11 @@
               </figure>
             </div>
 
+            <details class="more">
+              <summary>More notes &mdash; the design principles</summary>
+              <p>Layered rules: a public rules core, with client-specific rules layered on as additions, never replacements. Context adjusts, never silently: richer context may move a result into a different band, but the adjustment is always visible, never applied quietly. Stated hazards are hard blocks: a shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output can soften. And deterministic rules are the authority: AI assists with research; it does not make determinations.</p>
+            </details>
+
             <p><strong>Proprietary.</strong> A full code description of Ship Safe exists, but its details are proprietary and are withheld &mdash; the document it points to is a brief notice marking the project, nothing more. <a href="https://docs.google.com/document/d/1KoRTJ66r-851d7OytFY1ZTc7GBYzteW8SlzpFYt7qSs/edit">Read the notice</a>.</p>
 
             <p class="entry-links">
@@ -106,10 +111,16 @@
             <p>Witness is a warehouse management system run by voice and vision &mdash; an AI assistant for the entire warehouse process, from dock appointment to load and ship. Warehouse work is hands-busy and eyes-busy, so the worker runs the building by talking: speak the work, and the WMS updates itself. No keyboards, no clipboards, no stopping to type.</p>
             <p>It runs the whole building &mdash; dock doors, zones and bins, inbound and outbound &mdash; over three surfaces: the desk keeps the record, the phone captures, the glasses glance. A voice-driven work queue dispatches the shift, and a central agent prepares work before anyone asks: pre-staging what is needed, flagging what is about to jam. Managers see the warnings with their numbers showing &mdash; always a proposal, never a decision. And the system learns the building&rsquo;s own language: its ontology is dynamic, so when a worker uses a word it does not know, it asks &mdash; and remembers the answer.</p>
 
-            <figure class="photo-wide">
-              <img src="images/witness-test-load.webp" alt="Generated test load: a container cube shown from four sides" loading="lazy" />
-              <figcaption>A generated test load &mdash; a container cube shown from all four sides. Witness&rsquo;s test data is staged and generated, and is disclosed as such wherever it appears.</figcaption>
-            </figure>
+            <div class="photos">
+              <figure>
+                <img src="images/witness-glasses-view.jpg" alt="The Witness glasses view: a pallet seen through the glasses, META's words at the edge of sight" loading="lazy" />
+                <figcaption>The glasses view &mdash; the load as the wearer sees it, META&rsquo;s words at the edge of sight.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/witness-warehouse-map.jpg" alt="The Witness warehouse map during Walk the Shift: docks, receiving bays and storage zones, with the first task offered" loading="lazy" />
+                <figcaption>The warehouse map &mdash; Walk the Shift: the building live, the first task offered.</figcaption>
+              </figure>
+            </div>
 
             <p>At receiving, every shipment gets two independent witnesses. The receiver speaks their scan &mdash; hold to talk, describe what you see, in their own words, not squeezed into fixed fields &mdash; and a photo scan takes the same load from all four sides. Witness cross-checks the two point by point: agree, flag, or can&rsquo;t verify. Every disagreement becomes a finished OS&amp;D report &mdash; overage, shortage, and damage &mdash; captured at handoff instead of reconstructed weeks later. The machine never signs off. A person does.</p>
             <p>Witness was my entry in the Meta Global AI Developer Hackathon, built and submitted inside the October 26 &ndash; November 4, 2026 build window. It did not end at the deadline: it is one of my two flagship projects, and the work continues &mdash; full-flow voice completion, multi-job kitchens, guided entry, and a desk-phone build are the road from here. We are going to make this thing special.</p>
