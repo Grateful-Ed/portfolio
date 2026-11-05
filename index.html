@@ -67,8 +67,8 @@
         <section class="panel" data-panel="ship-safe" hidden>
           <div class="entry">
             <h2 id="shipsafe-h"><span class="entry-no">Entry 2 &middot; the flagship</span> Ship Safe</h2>
-            <p>Ship Safe is a dangerous-goods screening aid for freight shipments. It screens individual shipment lines against dangerous-goods rules and hands the screener a clear determination on each line &mdash; what is clear, what needs a closer look, and what must not move &mdash; so a busy screener&rsquo;s time goes to the freight that actually needs it. Underneath the screens sits a written rules language, and the design is layered: a public rules core, with client-specific rules layered on as additions, never replacements. A shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output and no added context can soften.</p>
-            <p>The AI in Ship Safe is an adviser, never the authority. A screener can ask Muse Spark, reached through the Meta Model API, to brief them on an unfamiliar shipper or to take a second look at a single line &mdash; observations and questions only. The deterministic rule set makes every determination, and the human screener always makes the final call.</p>
+            <p>Ship Safe is a dangerous-goods screening aid for freight shipments. It screens individual shipment lines against dangerous-goods rules and hands the screener a clear determination on each line &mdash; what is clear, what needs a closer look, and what must not move &mdash; so a busy screener&rsquo;s time goes to the freight that actually needs it.</p>
+            <p><strong>Proprietary</strong> &mdash; Ship Safe&rsquo;s design and implementation details are intentionally not published. In the product, AI assistance is advisory only; the human screener makes the final call.</p>
             <p>In validation, the suite ran 89 screening test cases: 141 of 141 regulated lines correctly flagged, 112 of 112 clean lines left clear, and 37 of 37 traps held. Personal project, built and validated on synthetic test data. Not affiliated with or endorsed by any employer.</p>
 
             <div class="photos">
@@ -89,11 +89,6 @@
                 <figcaption>Screening output, expanded &mdash; workings shown, not hidden.</figcaption>
               </figure>
             </div>
-
-            <details class="more">
-              <summary>More notes &mdash; the design principles</summary>
-              <p>Layered rules: a public rules core, with client-specific rules layered on as additions, never replacements. Context adjusts, never silently: richer context may move a result into a different band, but the adjustment is always visible, never applied quietly. Stated hazards are hard blocks: a shipper&rsquo;s own stated UN number or hazard class is a hard block that no AI output can soften. And deterministic rules are the authority: AI assists with research; it does not make determinations.</p>
-            </details>
 
             <p><strong>Proprietary.</strong> A full code description of Ship Safe exists, but its details are proprietary and are withheld &mdash; the document it points to is a brief notice marking the project, nothing more. <a href="https://docs.google.com/document/d/1KoRTJ66r-851d7OytFY1ZTc7GBYzteW8SlzpFYt7qSs/edit">Read the notice</a>.</p>
 
